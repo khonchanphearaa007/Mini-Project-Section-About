@@ -3,6 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --color-primary: #1A3838;
+    --color-paragraph:#5F7677;
+    --color-hover: rgba(178, 246, 239, 0.34);
+    --color-teal-50: #f0fdfa;
+}
+.section-about{
+    padding: 0 70px;
+}
 img{
     width: 100%;
     height: 100%;
@@ -16,8 +25,14 @@ img{
     font-weight: 700;
     letter-spacing: 1px;
 }
-
-
+.header-about .title-about::after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: teal;
+    margin: 20px auto;
+}
 .image-about img{
     border-radius: 4px;
 }
@@ -59,7 +74,198 @@ img{
 }
 
 /* Create a media */
-.title-about-me {
+.col-8{
     padding: 0 100px;   
+
+}
+.title-about-me {
     margin-top: 20px;
 }
+.title-about-me h2 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+}
+.title-about-me p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-paragraph);
+}
+.timeline{
+    margin-top: 30px;
+    display: flex;
+    /* background-color: rgba(178, 246, 239, 0.34); */
+    border-radius: 8px;
+    transition: 0.4s ease;
+}
+.timeline .year{
+    padding: 20px;
+    border-left: 3px solid teal;
+    padding-left: 15px;
+    color: teal;
+    font-size: 18px;
+    font-weight: 600;
+    align-items: center;
+}
+.timeline .description{
+    padding: 20px;
+    font-size: 16px;
+}
+.timeline:hover{
+   background-color: var(--color-hover);
+}
+
+/* Card skills */
+.row{
+    margin-top: 30px;
+}
+.card-skills{
+    background-color: var(--color-teal-50);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+    transition: 0.3s;
+}
+.card-skills .skill-header{
+    display: flex;
+    align-items: center;
+    padding: 0 20px 10px;
+}
+.card-skills .skill-header span{
+    font-size: 30px;
+    color: teal;
+    background-color: rgba(178, 246, 239, 0.34);
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 8px;
+}
+.card-skills .skill-header h3{
+    font-size: 22px;
+    font-weight: 400;
+    color: #0f766e;
+}
+.skill-information{
+    padding: 10px 20px;
+}
+.card-skills::before{
+    content: "";
+    border-top: 3px solid teal;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.skill-information .skill-info{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.skill-information h3{
+  font-size: 14px;
+  color: var(--color-paragraph);
+}
+.skill-information p{
+    font-size: 14px;
+    color: var(--color-paragraph);
+}
+.skill-information .skills-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #c8cdd2;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  /* margin-bottom: 15px; */
+ }
+ .skill-information .skill-1::before,
+ .skill-information .skill-2::before,
+ .skill-information .skill-3::before {
+  content: "";
+  width: 95%;
+  height: 100%;
+  position: absolute;
+  background-color: #00A19E;
+}
+ .skill-information .skill-2::before {
+  width: 85%;
+}
+ .skill-information .skill-3::before {
+  width: 65%;
+}
+.card-skills:hover{
+    box-shadow: 0 4px 8px rgba(0, 128, 128,0.45);
+    transform: translateY(-15px) !important;
+    transition: all 0.3s;
+}
+
+/* Swiper */
+.swiper {
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    /* height: 350px;  */
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev,
+.swiper .swiper-pagination-bullet {
+    color: teal;
+}
+
+/* Summary Stats */
+.summary-stats {
+    margin-top: 110px;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: rgba(1, 147, 132, 0.34); */
+    background-color: #d6f4f4;
+    border-radius: 8px;
+    transition: 0.4s;
+    padding: 10px 0;
+}
+.summary-stats .stat {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    margin: 0 10px;
+}
+.summary-stats .stat h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.summary-stats .stat p {
+    font-size: 16px;
+    color: #333;
+}
+.summary-stats .stat i {
+    font-size: 40px;
+    color: teal;
+    margin-bottom: 10px;
+}
+.summary-stats .stat:hover {
+    background-color: rgba(178, 246, 239, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 128, 128, 0.45);
+    transform: translateY(-20px);
+    transition: all 0.4s;
+}
+
+
